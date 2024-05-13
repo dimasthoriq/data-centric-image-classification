@@ -2,3 +2,5 @@ pandas
 numpy
 matplotlib
 pillow
+torch+cu121
+torchvision+cu121
