@@ -9,10 +9,7 @@ Applying various data engineering techniques into image classification task for 
           * Combining sample selection and relabeling using pre-trained EfficientNet
           * Fitted accumulated losses on 2 GMM and remove images that have 95% confidence coming from the larger loss (noise) distribution
           * Perform relabeling only when confidence > 90%
+          * Final selection using confidence from ResNet-34
       * Tackling data imbalances
           * Using focal loss when handling noisy labels (pre-training, accumulating loss for sample selection, and when training for relabeling)
-
-2. Timeline
-      * ~24/05/27: Setting up image augmentation method and saving the final training images into one folder
-      * ~24/05/29: Training the baseline reference model on our training images and then evaluate on our validation images
-      * ~24/06/03: Modify based on the evaluation
+          * Augmentation only on images with high confidence from ResNet-34 using AutoAugment (ImageNet) and Random Cutmix + Mixup
